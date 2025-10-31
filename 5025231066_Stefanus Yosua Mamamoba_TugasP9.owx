@@ -1,0 +1,214 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/acer/ontologies/2025/9/untitled-ontology-2"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/acer/ontologies/2025/9/untitled-ontology-2">
+    <Prefix name="" IRI="http://www.semanticweb.org/acer/ontologies/2025/9/untitled-ontology-2/"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class IRI="#Doctor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GeneralPractitioner"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ICU"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Patient"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Room"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Surgeon"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Ward"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#AssignedTo"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Supervise"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#TreatedBy"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasAge"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasDiagnosis"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasRoomNumber"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasSpecialization"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Doctor1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Doctor2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Patient1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Patient2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Room1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Room2"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#GeneralPractitioner"/>
+        <Class IRI="#Doctor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ICU"/>
+        <Class IRI="#Room"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Surgeon"/>
+        <Class IRI="#Doctor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Ward"/>
+        <Class IRI="#Room"/>
+    </SubClassOf>
+    <SubClassOf>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#AssignedTo"/>
+            <Class IRI="#ICU"/>
+        </ObjectSomeValuesFrom>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#TreatedBy"/>
+            <Class IRI="#Surgeon"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#ICU"/>
+        <Class IRI="#Ward"/>
+    </DisjointClasses>
+    <ClassAssertion>
+        <Class IRI="#Doctor"/>
+        <NamedIndividual IRI="#Doctor1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Surgeon"/>
+        <NamedIndividual IRI="#Doctor1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Doctor"/>
+        <NamedIndividual IRI="#Doctor2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#GeneralPractitioner"/>
+        <NamedIndividual IRI="#Doctor2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Patient"/>
+        <NamedIndividual IRI="#Patient1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Patient"/>
+        <NamedIndividual IRI="#Patient2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#ICU"/>
+        <NamedIndividual IRI="#Room1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Room"/>
+        <NamedIndividual IRI="#Room1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Room"/>
+        <NamedIndividual IRI="#Room2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Ward"/>
+        <NamedIndividual IRI="#Room2"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#AssignedTo"/>
+        <NamedIndividual IRI="#Patient1"/>
+        <NamedIndividual IRI="#Room1"/>
+    </ObjectPropertyAssertion>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#AssignedTo"/>
+    </FunctionalObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#AssignedTo"/>
+        <Class IRI="#Patient"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Supervise"/>
+        <Class IRI="#Doctor"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#TreatedBy"/>
+        <Class IRI="#Patient"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#AssignedTo"/>
+        <Class IRI="#Room"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Supervise"/>
+        <Class IRI="#Patient"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#TreatedBy"/>
+        <Class IRI="#Doctor"/>
+    </ObjectPropertyRange>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasAge"/>
+        <Class IRI="#Patient"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasDiagnosis"/>
+        <Class IRI="#Patient"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasRoomNumber"/>
+        <Class IRI="#Room"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasSpecialization"/>
+        <Class IRI="#Doctor"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasAge"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasDiagnosis"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasRoomNumber"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasSpecialization"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
